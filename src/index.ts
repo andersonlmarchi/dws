@@ -9,23 +9,14 @@ program.name('dws')
     .version("0.1.0")
 
 program.option('-a, --about', 'Show about information')
-program.option('-cmd, --commands', 'List available commands')
-program.option('-h, --help', 'Display help information')
-program.option('-v, --version', 'Display version information')
 
-program.action((options) => {
-    switch (options) {
+program.action((options) => { 
+    switch (true) {
         case options.about:
+            console.log()
             printBanner()
             break
-        case options.commands:
-            console.log('Available commands:')
-            console.log('  -a, --about       Show about information')
-            console.log('  -cmd, --commands  List available commands')
-            console.log('  -h, --help        Display help information')
-            console.log('  -v, --version     Display version information')
-            break
-        default:
+        default:            
             program.help()
     }
 })
